@@ -1,6 +1,6 @@
 <template>
     <section>
-        <p>Componente de mensagem</p>
+        <mensage :msg="msg" v-show="msg"/>
         <div>
             <form id="burger-form" @submit="createBurger">
                 <div class="input-container">
@@ -41,6 +41,8 @@
 </template>
 
 <script>
+    import mensage from './mensage.vue';
+
     export default{
         name: "burguerForm",
         // pegando todas as variáveis e declarando como nulo
@@ -55,6 +57,9 @@
                 opcionais: [],
                 msg: null
             }
+        },
+        components: {
+            mensage
         },
         methods: {
             // pegando os igredientes já cadastrados no banco
@@ -94,6 +99,12 @@
                 // encaminha para a porta dos pedidos
                 const res = await req.json();
 
+                // mensagem de pedido realizado
+                this.msg = "Pedido realizado com sucesso!"
+
+                // limpar mensagem
+                setTimeout(() => this.msg = "",3000);
+
                 // LIMPAR OS CAMPOS
                 this.nome = "";
                 this.carne = "";
@@ -108,11 +119,6 @@
 </script>
 
 <style scoped>
-    p{
-        text-align: center;
-        margin-bottom: 30px;
-        display: none;
-    }
     #burger-form{
         max-width: 330px;
         margin: 0 auto;

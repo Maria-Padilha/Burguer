@@ -89,17 +89,6 @@
         "Cebola roxa"
       ],
       "status": "Solicitado"
-    },
-    {
-      "id": "be2b",
-      "nome": "Padilha",
-      "carne": "Vegano",
-      "pao": "Integral",
-      "opcionais": [
-        "Tomate",
-        "Pepino"
-      ],
-      "status": "Solicitado"
     }
   ]
 }
