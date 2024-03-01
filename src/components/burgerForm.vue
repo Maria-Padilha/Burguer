@@ -2,7 +2,7 @@
     <section>
         <p>Componente de mensagem</p>
         <div>
-            <form id="burger-form">
+            <form id="burger-form" @submit="createBurger">
                 <div class="input-container">
                     <label for="nome">Nome do cliente: </label>
                     <input type="text" id="nome" name="nome" v-model="nome" placeholder="digite seu nome">
@@ -43,6 +43,7 @@
 <script>
     export default{
         name: "burguerForm",
+        // pegando todas as variáveis e declarando como nulo
         data(){
             return{
                 paes: null,
@@ -52,18 +53,52 @@
                 pao: null,
                 carne: null,
                 opcionais: [],
-                status: "Solicitado",
                 msg: null
             }
         },
         methods: {
+            // pegando os igredientes já cadastrados no banco
             async getIngredientes(){
+                // manda uma busca para a porta
                 const req = await fetch("http://localhost:3000/ingredientes");
                 const data =  await req.json();
                 
+                // as variaveis criadas recebem os valores do banco
                 this.paes = data.paes;
                 this.carnes = data.carnes;
                 this.opcionaisdata = data.opcionais;
+            },
+            // mandando novo pedido para o banco
+            async createBurger(e){
+                e.preventDefault();
+
+                // cria um objeto com os valores que foram inseridos no input 
+                const data = {
+                    nome: this.nome,
+                    carne: this.carne,
+                    pao: this.pao,
+                    opcionais: Array.from(this.opcionais),
+                    status: "Solicitado"
+                }
+
+                // transforma esse objeto num campo de texto
+                const dataJson = JSON.stringify(data);
+
+                // prepara o caminho e o método
+                const req = await fetch("http://localhost:3000/burguers",{
+                    method: "POST",
+                    headers: {"Content-Type": "application/json"},
+                    body: dataJson
+                });
+
+                // encaminha para a porta dos pedidos
+                const res = await req.json();
+
+                // LIMPAR OS CAMPOS
+                this.nome = "";
+                this.carne = "";
+                this.pao = "";
+                this.opcionais = "";
             }
         },
         mounted(){
