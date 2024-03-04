@@ -79,24 +79,12 @@
   ],
   "burguers": [
     {
-      "id": "2064",
+      "id": "a5da",
       "nome": "Maria",
-      "carne": "Alcatra",
-      "pao": "Italiano branco",
-      "opcionais": [
-        "Salame",
-        "Cebola roxa",
-        "Bacon"
-      ],
-      "status": "Solicitado"
-    },
-    {
-      "id": "3df4",
-      "nome": "Padilha",
       "carne": "Picanha",
-      "pao": "Italiano branco",
+      "pao": "3 queijos",
       "opcionais": [
-        "Bacon"
+        "Salame"
       ],
       "status": "Solicitado"
     }
