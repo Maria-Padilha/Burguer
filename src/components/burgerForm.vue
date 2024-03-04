@@ -48,7 +48,6 @@
         // pegando todas as variáveis e declarando como nulo
         data(){
             return{
-                id: 1,
                 paes: null,
                 carnes: null,
                 opcionaisdata: null,

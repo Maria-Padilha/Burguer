@@ -79,10 +79,30 @@
   ],
   "burguers": [
     {
-      "id": "a5da",
+      "id": "1b29",
       "nome": "Maria",
       "carne": "Picanha",
-      "pao": "3 queijos",
+      "pao": "Italiano branco",
+      "opcionais": [
+        "Cheddar"
+      ],
+      "status": "Finalizado"
+    },
+    {
+      "id": "e10e",
+      "nome": "Nice",
+      "carne": "Alcatra",
+      "pao": "Italiano branco",
+      "opcionais": [
+        "Tomate"
+      ],
+      "status": "Em produção"
+    },
+    {
+      "id": "1a75",
+      "nome": "Padilha",
+      "carne": "Picanha",
+      "pao": "Parmesão e orégano",
       "opcionais": [
         "Salame"
       ],
