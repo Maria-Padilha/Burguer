@@ -89,6 +89,16 @@
         "Bacon"
       ],
       "status": "Solicitado"
+    },
+    {
+      "id": "3df4",
+      "nome": "Padilha",
+      "carne": "Picanha",
+      "pao": "Italiano branco",
+      "opcionais": [
+        "Bacon"
+      ],
+      "status": "Solicitado"
     }
   ]
 }
