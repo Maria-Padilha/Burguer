@@ -3,7 +3,6 @@
   <main class="main-container">
     <h2>Monte o seu burguer:</h2>
     <burgerForm />
-    
   </main>
 </template>
 

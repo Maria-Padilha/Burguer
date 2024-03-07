@@ -1,6 +1,6 @@
 <template>
     <div class="message-container">
-        <p>Pedidio realizado com sucesso!</p>
+        <p>{{ msg }}</p>
     </div>
 </template>
 
